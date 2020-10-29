@@ -25,7 +25,11 @@
   "eslintConfig": {
     "extends": [
       "wesbos"
-    ]
+    ],
+    "rules": {
+      "react/prop-types": [2, { "ignore": ["children"] }],
+      "react/jsx-props-no-spreading": [0, {}]
+    }
   },
   "browserslist": {
     "production": [
