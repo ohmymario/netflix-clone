@@ -2,15 +2,15 @@
   {
     "id": 1,
     "title": "Enjoy on your TV.",
-    "subTitle": "Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.",
+    "subTitle": "Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.",
     "image": "/images/misc/home-tv.jpg",
     "alt": "Tiger King on Netflix",
     "direction": "row"
   },
   {
     "id": 2,
-    "title": "Download your programmes to watch on the go.",
-    "subTitle": "Save your data and watch all your favourites offline.",
+    "title": "Download your shows to watch offline.",
+    "subTitle": "Save your favorites easily and always have something to watch.",
     "image": "/images/misc/home-mobile.jpg",
     "alt": "Watch on mobile",
     "direction": "row-reverse"
