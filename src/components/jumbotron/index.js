@@ -10,11 +10,13 @@ import {
   Image,
 } from './styles/jumbotron';
 
+// Hero unit style content
+
 const Jumbotron = (props) => {
   // Grabbing restProps for compound component
   const { children, direction = 'row', ...restProps } = props;
   return (
-    <Item>
+    <Item {...restProps}>
       <Inner direction={direction}>{children}</Inner>
     </Item>
   );
