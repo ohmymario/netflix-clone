@@ -11,8 +11,8 @@ function App() {
         <Route exact path="/">
           <>
             <JumbotronContainer />
-            <FooterContainer />
             <FaqsContainer />
+            <FooterContainer />
           </>
         </Route>
         <Route path="/signin">

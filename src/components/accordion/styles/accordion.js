@@ -14,7 +14,7 @@ const Inner = styled.div`
 `;
 
 const Frame = styled.div`
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 `;
 
 const Title = styled.h1`
