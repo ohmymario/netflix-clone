@@ -9,8 +9,10 @@ const OptForm = (props) => {
 };
 
 OptForm.Input = function OptFormInput(props) {
-  const { children, placeholder, ...restProps } = props;
-  return <Input placeholder={placeholder} {...restProps} />;
+  const { children, placeholder, type, name, ...restProps } = props;
+  return (
+    <Input placeholder={placeholder} type={type} name={name} {...restProps} />
+  );
 };
 
 OptForm.Button = function OptFormButton(props) {
