@@ -19,4 +19,4 @@ const JumbotronContainer = () => (
   </Jumbotron.Container>
 );
 
-export { JumbotronContainer };
+export default JumbotronContainer;

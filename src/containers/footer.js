@@ -40,4 +40,4 @@ const FooterContainer = () => (
   </Footer>
 );
 
-export { FooterContainer };
+export default FooterContainer;
