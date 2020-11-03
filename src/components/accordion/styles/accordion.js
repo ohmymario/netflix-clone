@@ -64,7 +64,7 @@ const Header = styled.div`
 `;
 
 const Body = styled.div`
-  font-size: 1.625rem;
+  font-size: 1.25rem;
   max-height: 1200px;
   font-weight: normal;
   line-height: normal;
