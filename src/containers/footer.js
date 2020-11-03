@@ -3,7 +3,7 @@ import { Footer } from '../components';
 
 const FooterContainer = () => (
   <Footer>
-    <Footer.Title>Questions? Contact us.</Footer.Title>
+    <Footer.Title>Questions? Call 1-123-456-7891</Footer.Title>
 
     <Footer.Break />
 
