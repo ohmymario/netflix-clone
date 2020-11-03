@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { JumbotronContainer } from './containers/jumbotron';
-import { FooterContainer } from './containers/footer';
+import JumbotronContainer from './containers/jumbotron';
+import FooterContainer from './containers/footer';
+import FaqsContainer from './containers/faqs';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           <>
             <JumbotronContainer />
             <FooterContainer />
+            <FaqsContainer />
           </>
         </Route>
         <Route path="/signin">
