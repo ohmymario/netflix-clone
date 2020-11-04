@@ -1,28 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import JumbotronContainer from './containers/jumbotron';
-import FooterContainer from './containers/footer';
-import FaqsContainer from './containers/faqs';
+import { Home, Signin, Signup, Browse } from './pages';
+
+import * as ROUTES from './constants/routes';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/">
-          <>
-            <JumbotronContainer />
-            <FaqsContainer />
-            <FooterContainer />
-          </>
+        <Route exact path={ROUTES.HOME}>
+          <Home />
         </Route>
-        <Route path="/signin">
-          <p>Signin</p>
+        <Route path={ROUTES.SIGNUP}>
+          <Signup />
         </Route>
-        <Route path="/signup">
-          <p>Signup</p>
+        <Route path={ROUTES.SIGNIN}>
+          <Signin />
         </Route>
-        <Route path="/browse">
-          <p>Browse</p>
+        <Route path={ROUTES.BROWSE}>
+          <Browse />
         </Route>
       </Switch>
     </Router>
