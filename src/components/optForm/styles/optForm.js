@@ -2,6 +2,7 @@ import styled from 'styled-components/macro';
 
 const Container = styled.div`
   display: flex;
+  max-width: 950px;
   justify-content: center;
   height: 100%;
   margin-top: 20px;
@@ -53,6 +54,7 @@ const Button = styled.button`
 `;
 
 const Text = styled.p`
+  display: block;
   font-size: 1.2rem;
   color: white;
   text-align: center;
