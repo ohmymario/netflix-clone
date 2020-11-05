@@ -5,7 +5,7 @@ import { Container, Input, Button, Text } from './styles/optForm';
 
 const OptForm = (props) => {
   const { children, ...restProps } = props;
-  return <Container>{children}</Container>;
+  return <Container {...restProps}>{children}</Container>;
 };
 
 OptForm.Input = function OptFormInput(props) {
