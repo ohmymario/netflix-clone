@@ -1,12 +1,8 @@
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 
-const backgroundImg = (props) => {
-  console.log(props.src);
-  return props.src
-    ? `../images/misc/${props.src}.jpg`
-    : '../images/misc/home-bg.jpg';
-};
+const backgroundImg = (props) =>
+  props.src ? `../images/misc/${props.src}.jpg` : '../images/misc/home-bg.jpg';
 
 const Background = styled.div`
   display: flex;
