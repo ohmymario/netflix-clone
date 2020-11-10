@@ -29,7 +29,7 @@ const Signin = () => {
         setPassword('');
         const { code, message } = error;
         setError(message);
-        console.log(code);
+        console.error(code);
       });
   };
 
