@@ -10,10 +10,10 @@ const Signup = () => {
   const history = useHistory();
   const { firebase } = useContext(FirebaseContext);
 
-  const [firstName, setFirstName] = useState();
-  const [emailAddress, setEmailAddress] = useState();
-  const [password, setPassword] = useState();
-  const [error, setError] = useState();
+  const [firstName, setFirstName] = useState('');
+  const [emailAddress, setEmailAddress] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const isInvalid = firstName === '' || password === '' || emailAddress === '';
 
@@ -27,8 +27,8 @@ const Signup = () => {
       .then((res) => {
         res.user.updateProfile({
           // EXAMPLE from FIREBASE DOCS
-          displayName: 'Jane Q. User',
-          photoURL: 'https://example.com/jane-q-user/profile.jpg',
+          displayName: firstName,
+          photoURL: Math.floor(Math.random() * 5) + 1,
         });
       })
       .then(() => {
@@ -53,11 +53,13 @@ const Signup = () => {
 
           <Form.Base onSubmit={handleSignup} method="POST">
             <Form.Input
+              type="text"
               placeholder="First name"
               value={firstName}
               onChange={(props) => setFirstName(props.target.value)}
             />
             <Form.Input
+              type="email"
               placeholder="Email address"
               value={emailAddress}
               onChange={(props) => setEmailAddress(props.target.value)}
