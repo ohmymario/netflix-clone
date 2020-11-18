@@ -76,7 +76,6 @@ const Dropdown = styled.div`
   // Dropdown -> Group(last) -> TextLink(Signout)
   ${Group}:last-of-type ${TextLink} {
     cursor: pointer;
-    border: 1px solid red;
   }
   ${Group} {
     margin-bottom: 10px;
@@ -171,6 +170,48 @@ const ButtonLink = styled(Link)`
   }
 `;
 
+const Search = styled.div`
+  display: flex;
+  align-items: center;
+
+  svg {
+    color: #fff;
+    cursor: pointer;
+  }
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+`;
+
+const SearchIcon = styled.button`
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  img {
+    filter: brightness(0) invert(1);
+    width: 16px;
+  }
+`;
+
+const SearchInput = styled.input`
+  background-color: #44444459;
+  color: #fff;
+  border: 1px solid #fff;
+  transition: width 0.5s;
+  height: 30px;
+  font-size: 14px;
+  margin-left: ${(props) => (props.active ? '10px' : '0')};
+  padding: ${(props) => (props.active ? '0 10px' : '0')};
+  opacity: ${(props) => (props.active ? '1' : '0')};
+  width: ${(props) => (props.active ? '200px' : '0px')};
+`;
+
 export {
   Background,
   ButtonLink,
@@ -182,6 +223,9 @@ export {
   Logo,
   Picture,
   Profile,
+  Search,
+  SearchIcon,
+  SearchInput,
   Text,
   TextLink,
 };

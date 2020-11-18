@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import {
@@ -12,6 +12,9 @@ import {
   Logo,
   Picture,
   Profile,
+  Search,
+  SearchIcon,
+  SearchInput,
   Text,
   TextLink,
 } from './styles/header';
@@ -57,6 +60,28 @@ Header.Group = function HeaderGroup(props) {
   return <Group {...restProps}>{children}</Group>;
 };
 
+Header.Search = function HeaderSearch(props) {
+  const { searchTerm, setSearchTerm, ...restProps } = props;
+  const [searchActive, setSearchActive] = useState(false);
+  const flipActive = () => {
+    setSearchActive(!searchActive);
+  };
+
+  return (
+    <Search {...restProps}>
+      <SearchIcon onClick={() => flipActive()}>
+        <img src="/images/icons/search.png" alt="search" />
+      </SearchIcon>
+      <SearchInput
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Search films and series"
+        active={searchActive}
+      />
+    </Search>
+  );
+};
+
 Header.Dropdown = function HeaderDropdown(props) {
   const { children, ...restProps } = props;
   return <Dropdown {...restProps}>{children}</Dropdown>;
@@ -96,14 +121,19 @@ Header.propTypes = {
   bg: PropTypes.bool,
 };
 
-Header.ButtonLink.propTypes = {
-  children: PropTypes.node,
-  to: PropTypes.string,
+Header.Search.propTypes = {
+  searchTerm: PropTypes.string,
+  setSearchTerm: PropTypes.func,
 };
 
 Header.Picture.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
+};
+
+Header.ButtonLink.propTypes = {
+  children: PropTypes.node,
+  to: PropTypes.string,
 };
 
 Header.Logo.propTypes = {

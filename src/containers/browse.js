@@ -8,11 +8,14 @@ import logo from '../logo.svg';
 
 const BrowseContainer = (props) => {
   const { slides } = props;
+
+  const [searchTerm, setSearchTerm] = useState('');
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
 
   const { firebase } = useContext(FirebaseContext);
   const user = firebase.auth().currentUser || {};
+
   const loadingComponent = loading ? (
     <Loading src={user.photoURL} />
   ) : (
@@ -44,6 +47,10 @@ const BrowseContainer = (props) => {
           </Header.Group>
 
           <Header.Group>
+            <Header.Search
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+            />
             <Header.Profile>
               <Header.Picture src={user.photoURL} alt="profile-picture" />
               <Header.Dropdown>
