@@ -5,7 +5,7 @@ import { Spinner, ReleaseBody, LockBody, Picture } from './styles/loading';
 const Loading = (props) => {
   const { src, ...restProps } = props;
   return (
-    <Spinner>
+    <Spinner {...restProps}>
       <LockBody />
       <Picture src={`/images/users/${src}.png`} />
     </Spinner>
