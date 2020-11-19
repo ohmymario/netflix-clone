@@ -76,6 +76,7 @@ const BrowseContainer = (props) => {
             Oscars for their work in Todd Phillips's take on the DC
             supervillain.
           </Header.Text>
+          <Header.PlayButton>Play</Header.PlayButton>
         </Header.Feature>
       </Header>
     </>

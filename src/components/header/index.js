@@ -11,6 +11,7 @@ import {
   Group,
   Logo,
   Picture,
+  PlayButton,
   Profile,
   Search,
   SearchIcon,
@@ -104,6 +105,11 @@ Header.ButtonLink = function HeaderButtonLink(props) {
       {children}
     </ButtonLink>
   );
+};
+
+Header.PlayButton = function HeaderPlayButton(props) {
+  const { children, ...restProps } = props;
+  return <PlayButton {...restProps}>{children}</PlayButton>;
 };
 
 Header.Logo = function HeaderLogo(props) {
