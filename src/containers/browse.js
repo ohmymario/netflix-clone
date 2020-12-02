@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import SelectProfileContainer from './profiles';
 import FooterContainer from './footer';
-import { Card, Header, Loading } from '../components';
+import { Card, Header, Loading, Player } from '../components';
 import FirebaseContext from '../context/firebase';
 import * as ROUTES from '../constants/routes';
 import logo from '../logo.svg';
@@ -117,11 +117,10 @@ const BrowseContainer = (props) => {
             </Card.Entities>
             {/* populated when clicked */}
             <Card.Feature category={category}>
-              {/* FOR LATER */}
-              {/* <Player>
+              <Player>
                 <Player.Button />
-                <Player.Video />
-              </Player> */}
+                <Player.Video src="/videos/bunny.mp4" />
+              </Player>
             </Card.Feature>
           </Card>
         ))}
