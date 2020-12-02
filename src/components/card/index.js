@@ -24,7 +24,6 @@ const Card = (props) => {
   const { children, ...restProps } = props;
   const [showFeature, setShowFeature] = useState(false);
   const [itemFeature, setItemFeature] = useState({});
-  console.log(props);
   return (
     <FeatureContext.Provider
       value={{ showFeature, setShowFeature, itemFeature, setItemFeature }}
