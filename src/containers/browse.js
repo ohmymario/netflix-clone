@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import Fuse from 'fuse.js';
 import PropTypes from 'prop-types';
 import SelectProfileContainer from './profiles';
 import FooterContainer from './footer';
@@ -29,6 +30,12 @@ const BrowseContainer = (props) => {
     firebase.auth().signOut();
   };
 
+  const options = {
+    isCaseSensitive: false,
+    minMatchCharLength: 3,
+    keys: ['data.description', 'data.title', 'data.genre'],
+  };
+
   // Only used when user selects profile
   useEffect(() => {
     setTimeout(() => {
@@ -39,6 +46,17 @@ const BrowseContainer = (props) => {
   useEffect(() => {
     setSlideRows(slides[category]);
   }, [slides, category]);
+
+  useEffect(() => {
+    const fuse = new Fuse(slideRows, options);
+    const allResults = fuse.search(searchTerm).map(({ item }) => item);
+
+    if (slideRows.length > 0 && allResults.length > 0) {
+      setSlideRows(allResults);
+    } else {
+      setSlideRows(slides[category]);
+    }
+  }, [searchTerm]);
 
   // Needs a user for profile
   return profile.displayName ? (
@@ -102,6 +120,7 @@ const BrowseContainer = (props) => {
         {slideRows.map((slideItem) => (
           <Card key={`${category}-${slideItem.title.toLowerCase()}`}>
             <Card.Title>{slideItem.title}</Card.Title>
+
             <Card.Entities>
               {slideItem.data.map((item) => (
                 <Card.Item key={item.docId} item={item}>
@@ -115,7 +134,7 @@ const BrowseContainer = (props) => {
                 </Card.Item>
               ))}
             </Card.Entities>
-            {/* populated when clicked */}
+
             <Card.Feature category={category}>
               <Player>
                 <Player.Button />
