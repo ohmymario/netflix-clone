@@ -27,7 +27,11 @@ Player.Video = function PlayerVideo(props) {
 
   return showPlayer
     ? ReactDOM.createPortal(
-        <Overlay onClick={() => hidePlayer()} {...restProps}>
+        <Overlay
+          onClick={() => hidePlayer()}
+          {...restProps}
+          data-testid="player"
+        >
           <Inner>
             <video controls onClick={(e) => e.stopPropagation()}>
               <source src={src} type="video/mp4" />
