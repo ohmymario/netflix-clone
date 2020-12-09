@@ -7,7 +7,7 @@ const Loading = (props) => {
   return (
     <Spinner {...restProps}>
       <LockBody />
-      <Picture src={`/images/users/${src}.png`} />
+      <Picture src={`/images/users/${src}.png`} data-testid="loading-picture" />
     </Spinner>
   );
 };
