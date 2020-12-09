@@ -23,7 +23,7 @@ import {
 const Header = (props) => {
   const { children, src, bg = true, ...restProps } = props;
   return bg ? (
-    <Background src={src} {...restProps}>
+    <Background src={src} data-testid="header-bg" {...restProps}>
       {children}
     </Background>
   ) : (
@@ -71,13 +71,18 @@ Header.Search = function HeaderSearch(props) {
   return (
     <Search {...restProps}>
       <SearchIcon onClick={() => flipActive()}>
-        <img src="/images/icons/search.png" alt="search" />
+        <img
+          src="/images/icons/search.png"
+          alt="search"
+          data-testid="search-click"
+        />
       </SearchIcon>
       <SearchInput
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder="Search films and series"
         active={searchActive}
+        data-testid="search-input"
       />
     </Search>
   );
