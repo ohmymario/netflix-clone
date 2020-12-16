@@ -25,7 +25,10 @@ const SelectProfileContainer = (props) => {
       <Profiles>
         <Profiles.Title>Who's watching</Profiles.Title>
         <Profiles.List>
-          <Profiles.User onClick={() => selectProfile()}>
+          <Profiles.User
+            data-testid="user-profile"
+            onClick={() => selectProfile()}
+          >
             <Profiles.Picture src={user.photoURL} />
             <Profiles.Name>{user.displayName} </Profiles.Name>
           </Profiles.User>

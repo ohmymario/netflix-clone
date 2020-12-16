@@ -14,11 +14,12 @@ const Signin = () => {
   const [error, setError] = useState('');
 
   const isInvalid = password === '' || emailAddress === '';
+
   const handleSignIn = (e) => {
     e.preventDefault();
 
     // Firebase stuffs
-    firebase
+    return firebase
       .auth()
       .signInWithEmailAndPassword(emailAddress, password)
       .then(() => {
@@ -38,7 +39,7 @@ const Signin = () => {
       <HeaderContainer>
         <Form>
           <Form.Title>Sign In</Form.Title>
-          {error && <Form.Error>{error}</Form.Error>}
+          {error && <Form.Error data-testid="error">{error}</Form.Error>}
 
           <Form.Base onSubmit={handleSignIn} method="POST">
             <Form.Input
@@ -56,7 +57,11 @@ const Signin = () => {
               onChange={(event) => setPassword(event.target.value)}
             />
 
-            <Form.Submit disabled={isInvalid} type="submit">
+            <Form.Submit
+              disabled={isInvalid}
+              type="submit"
+              data-testid="sign-in"
+            >
               Sign In
             </Form.Submit>
           </Form.Base>
