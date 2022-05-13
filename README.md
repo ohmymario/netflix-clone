@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Netflix Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Netflix clone created using React. The backend is using Firebase to keep the films, shows and users in the cloud. Be sure to sign up to see the whole project!
 
-## Available Scripts
+**Link to project:** https://flixx-clone.netlify.app/
 
-In the project directory, you can run:
+## Landing Page
+![landing page](demo/netflix-landing.gif)
 
-### `npm start`
+## Films
+![landing page](demo/netflix-films.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How It's Made:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Tech used:** React, Compound Components, Hooks, Firebase, Styled-Components, Fuse.js
 
-### `npm test`
+This is my first time trying out compound components. This isn't really a technology but rather a pattern on how to create reusable components. I'm still not entirely sure if I'm sold though I do see that many popular React Libraries adopt it. There is a lot of setup before you can get up and running on any component and reading the components after doesn't always seem intuitive. This could just be me not being used to the layout. Using the components is completely different as it now feels like your own mini library.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Styled components again is a joy to use and keeps all CSS contained within the component. Firebase data was put into React Context to have the data easily accessible wherever I needed it, which was just the browse page to get sorted and then displayed.
 
-### `npm run build`
+## Optimizations
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If during the time I was making this there was an API that easily kept update of Netflix's most popular shows then it would have been nice to have the selection live update. Perhaps on a schedule so I don't end up running up a bill. Another optimization idea to give the site more life is to have each selected show display the show trailer rather than a stock video. Most plans I had are addons rather than bug fixes.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Lessons Learned:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Examples:
+Take a look at these couple examples that I have in my own portfolio:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**weatherman:** https://github.com/ohmymario/weatherman
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**qr-code:** https://github.com/ohmymario/qr-code
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Coffee Roasters:** https://github.com/ohmymario/coffee-roasters
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
